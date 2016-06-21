@@ -4,23 +4,16 @@
 
 int main(int argc, char** argv) {
 
-  int i = 0;
-  int j = 0;
-  int res;
-
-  for (i; i<= 9; ++i) {
+  for (int i =0, j = 0; i <= 9; ++i, j = 0) {
 
     while (j <= 9) {
-      printf("%i x %i", i, j);
-      res = i * j;
+      int res = i * j;
+      printf("%i x %i = %i\n", i, j, res);
       ++j;
-      printf(" = %i\n", res);
     }
 
-  j = 0;
-  printf("\n");
+    printf("\n");
   }
 
-return 0;  
-
+  return 0;
 }
