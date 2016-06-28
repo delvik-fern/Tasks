@@ -2,46 +2,48 @@
 
 #include <stdio.h>
 
-int solve(int* x, int* y, int size) {
-  
-    int scalar = 0;
-    int* z = new int[size];
-    printf("z = ( ");
-      for (int i = 0; i < size; ++i) {
-      
-        z[i] = x[i] * y[i];
-        scalar = scalar + z[i];
-        printf("%i ", z[i]);
-      }
-    printf(")\n");
-return scalar;
-}
+int solve(int* x, int* y, int size);
 
 int main(int argc, char** argv) {
 
-    int size;
-    printf("Enter vector length: ");
-    scanf("%i", &size);  
-    						
-    printf("Enter X vector: ");			
+  int size;
+  printf("Enter vector length: ");
+  scanf("%i", &size);
+  printf("Enter X vector: ");
+  int* x = new int[size];
 
-    int* x = new int[size];
-    for (int i = 0; i < size; ++i) {
-        scanf("%i", &x[i]);    
-    }
+  for (int i = 0; i < size; ++i) {
+    scanf("%i", &x[i]);
+  }
 
-    printf("Enter Y vector: ");
+  printf("Enter Y vector: ");
+  int* y = new int[size];
 
-    int* y = new int[size];
-    for (int i = 0; i < size; ++i) {
-        scanf("%i", &y[i]);
-    }
+  for (int i = 0; i < size; ++i) {
+    scanf("%i", &y[i]);
+  }
 
-    int res = solve(x, y, size);
-    printf("Scalar = %i\n", res);
+  int res = solve(x, y, size);
+  printf("Scalar = %i\n", res);
 
-delete [] x;
-delete [] y;
+  delete [] x;
+  delete [] y;
+  return 0;
+}
 
-return 0;
+int solve(int* x, int* y, int size) {
+  
+  int scalar = 0;
+  int* z = new int[size];
+  printf("z = ( ");
+
+  for (int i = 0; i < size; ++i) {
+    z[i] = x[i] * y[i];
+    scalar += z[i];
+    printf("%i ", z[i]);
+  }
+
+  printf(")\n");
+  delete [] z;
+  return scalar;
 }
