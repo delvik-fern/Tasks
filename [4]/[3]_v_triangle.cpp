@@ -12,22 +12,24 @@
 
 int main(int argc, char** argv) {
 
-  int* N = new int();  
+  int N;  
 
-  printf("Enter hight: ");
-  scanf("%i", N);
+  printf("Enter height: ");
+  scanf("%i", &N);
 
 
-  for (int curr_ln = 1; curr_ln <= *N; ++curr_ln) {
+  for (int current_line = 1; current_line <= N; ++current_line) {
     
-    for (int numb_spcs = 0; numb_spcs <= (*N - curr_ln); ++numb_spcs)
+    for (int n_of_spaces = 0; n_of_spaces <= (N - current_line); ++n_of_spaces) {
       printf(" "); 
-    
-      for (int numb_strs = 0; numb_strs < 2 * curr_ln - 1; ++numb_strs)
+    }
+
+      for (int n_of_stars = 0; n_of_stars < 2 * current_line - 1; ++n_of_stars) {
         printf("*");
+      }
 
     printf("\n");
   }
 
-return 0;
+  return 0;
 }
