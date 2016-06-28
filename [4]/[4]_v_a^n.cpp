@@ -4,21 +4,21 @@
 
 int main(int argc, char** argv) {
   
-  int* a = new int();
-  int* a_orig = new int ();
-  int* N = new int();
+  int a;
+  int a_original;
+  int N;
 
   printf("\nBase (a): ");
-  scanf("%i", a);
+  scanf("%i", &a);
   printf("Power (N): "); 
-  scanf("%i", N);
+  scanf("%i", &N);
   
-  *a_orig = *a;
+  a_original = a;
   
-  for (int i = 1; i < *N; ++i)
-    *a *= *a_orig;
+  for (int i = 1; i < N; ++i) {
+    a *= a_original;
+  }
 
-  printf("\na^N = %i\n", *a);
-  
-  
+  printf("\na^N = %i\n\n", a);
+  return 0;
 }
